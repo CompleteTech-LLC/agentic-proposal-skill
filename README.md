@@ -10,6 +10,18 @@ A CompleteTech LLC Codex skill for creating proposal and SOW-style documents for
 
 Part of the CompleteTech LLC agentic services skill library. This skill turns verified discovery into buyer-facing proposals, SOWs, pilot recommendations, roadmaps, risk plans, and approval artifacts.
 
+## OpenClaw / ClawHub Metadata
+
+- Skill key: `agentic-proposal-skill`
+- Version-ready metadata: `1.0.0`
+- Homepage: https://github.com/CompleteTech-LLC/agentic-proposal-skill
+- README: https://github.com/CompleteTech-LLC/agentic-proposal-skill#readme
+- Runtime binaries: `python3`
+- Python packages: none
+- Intended registry/discovery tags: `latest`, `complete-tech`, `codex-skill`, `agentic-development`, `agentic-workflows`, `proposal`, `sow`, `sales`
+- License: repository code, templates, and documentation use MIT; ClawHub publishing is intentionally skipped for now.
+- Brand assets: CompleteTech LLC names, logos, seals, and brand assets are reserved; see `BRAND_ASSETS.md`.
+
 ## Workflow Diagram
 
 ```mermaid

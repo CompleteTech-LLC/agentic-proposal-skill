@@ -1,6 +1,15 @@
 ---
 name: agentic-proposal-skill
-description: Create CompleteTech LLC agentic development proposals, statements of work, discovery recaps, pilot recommendations, evaluation plans, risk/control plans, implementation roadmaps, acceptance criteria, change orders, retainer proposals, and procurement-ready scope summaries. Use when Codex needs to bridge outreach emails and signed contracts/invoices by drafting buyer-facing proposal or SOW-style documents for bounded agentic workflow services.
+description: >-
+  Create CompleteTech LLC agentic development proposals, statements of work, discovery recaps, pilot recommendations, evaluation plans, risk/control plans, implementation roadmaps, acceptance criteria, change orders, retainer proposals, and procurement-ready scope summaries. Use when Codex needs to bridge outreach emails and signed contracts/invoices by drafting buyer-facing proposal or SOW-style documents for bounded agentic workflow services.
+version: 1.0.0
+metadata:
+  openclaw:
+    skillKey: agentic-proposal-skill
+    homepage: https://github.com/CompleteTech-LLC/agentic-proposal-skill
+    requires:
+      bins:
+        - python3
 ---
 
 # Agentic Proposal Skill
