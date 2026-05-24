@@ -73,7 +73,7 @@ Rendered templates are drafts. Replace placeholders with verified client, scope,
 
 ![One-page pilot proposal preview](assets/examples/example.png)
 
-Preview converted from generated artifact: [example.md](assets/examples/example.md).
+Full-document preview converted from generated artifact: [example.md](assets/examples/example.md).
 
 **One-page pilot proposal: Support triage agent**
 
