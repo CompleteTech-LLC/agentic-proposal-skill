@@ -73,6 +73,8 @@ Rendered templates are drafts. Replace placeholders with verified client, scope,
 
 ![One-page pilot proposal preview](assets/examples/example.png)
 
+Preview converted from generated artifact: [example.md](assets/examples/example.md).
+
 **One-page pilot proposal: Support triage agent**
 
 ```bash
@@ -82,7 +84,8 @@ python3 scripts/render_proposal.py \
   --var workflow="support triage agent" \
   --var pain="manual queue review slows escalation and creates uneven customer notes" \
   --var pilot_goal="prepare consistent classifications, escalation notes, and reply drafts for human approval" \
-  --var approval_gate="support lead approves every customer-facing response"
+  --var approval_gate="support lead approves every customer-facing response" \
+  > assets/examples/example.md
 ```
 
 Example proposal frame:
