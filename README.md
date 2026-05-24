@@ -69,6 +69,28 @@ python3 scripts/render_proposal.py \
 
 Rendered templates are drafts. Replace placeholders with verified client, scope, timeline, pricing, risk, and approval details before use.
 
+## Example
+
+![One-page pilot proposal preview](assets/examples/example.png)
+
+**One-page pilot proposal: Support triage agent**
+
+```bash
+python3 scripts/render_proposal.py \
+  --template one-page-pilot-proposal \
+  --var client_name="Northstar Support" \
+  --var workflow="support triage agent" \
+  --var pain="manual queue review slows escalation and creates uneven customer notes" \
+  --var pilot_goal="prepare consistent classifications, escalation notes, and reply drafts for human approval" \
+  --var approval_gate="support lead approves every customer-facing response"
+```
+
+Example proposal frame:
+
+- Build a bounded pilot around one queue, one reviewer group, and a fixed set of evaluation examples.
+- Include assumptions, exclusions, acceptance criteria, monitoring, and handoff from the start.
+- Route sensitive data, tool access, and launch questions to `agentic-security-review-skill` before production use.
+
 ## Brand Notes
 
 Use a direct, concrete, low-hype tone. Present agentic development as bounded workflow implementation: workflow discovery, tool routing, retrieval, approval gates, evaluation examples, logs, monitoring, documentation, and handoff. Do not invent proof, regulated-use assurances, legal claims, savings metrics, or client facts.
