@@ -88,3 +88,19 @@ python3 scripts/render_proposal.py --template one-page-pilot-proposal --var clie
 ```
 
 Rendered templates are drafts. Replace placeholders with verified facts and refine the narrative for the buyer.
+
+## Rendering to a Branded PDF
+
+Artifacts from this skill are delivered as branded CompleteTech LLC **PDF** documents, not raw Markdown. After drafting the artifact text (optionally starting from a catalog template), render it with the bundled generator:
+
+```bash
+pip install -r requirements.txt
+python3 scripts/render_pdf.py \
+  --markdown artifact.md --out artifact.pdf --png artifact.png \
+  --logo assets/logo.png \
+  --title "Support Email Triage Agent — Pilot Proposal" --doc-type "PROPOSAL / STATEMENT OF WORK" \
+  --subtitle "Prepared for <b>Client Name</b>" \
+  --meta "DOCUMENT NO.=PRO-2026-0188" --meta "DATE=2026-05-24"
+```
+
+`scripts/render_pdf.py` applies the shared CompleteTech branding (logo, cover page, letterhead band, watermark, footer) and supports a Markdown subset: `#`/`##`/`###` headings, paragraphs, `-` bullet lists, tables, `>` callouts, `**bold**`, and `[PAGE_BREAK]`. It requires `reportlab`; the optional `--png` preview montage requires `pypdfium2` and `pillow`. See `assets/examples/` for a rendered example.

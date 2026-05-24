@@ -17,8 +17,8 @@ Part of the CompleteTech LLC agentic services skill library. This skill turns ve
 - Homepage: https://github.com/CompleteTech-LLC/agentic-proposal-skill
 - README: https://github.com/CompleteTech-LLC/agentic-proposal-skill#readme
 - Runtime binaries: `python3`
-- Python packages: none
-- Intended registry/discovery tags: `latest`, `complete-tech`, `codex-skill`, `agentic-development`, `agentic-workflows`, `proposal`, `sow`, `sales`
+- Python packages: `reportlab>=4.0` (optional PNG preview: `pypdfium2`, `pillow`)
+- Intended registry/discovery tags: `latest`, `complete-tech`, `codex-skill`, `agentic-development`, `agentic-workflows`, `proposal`, `sow`, `sales`, `pdf`, `pdf-generator`
 - License: repository code, templates, and documentation use MIT; ClawHub publishing is intentionally skipped for now.
 - Brand assets: CompleteTech LLC names, logos, seals, and brand assets are reserved; see `BRAND_ASSETS.md`.
 
@@ -55,6 +55,8 @@ flowchart LR
 - `references/proposal-lifecycle.md` - end-to-end proposal flow and handoff points.
 - `references/proposal-positioning.md` - CompleteTech LLC proposal language and guardrails.
 - `scripts/render_proposal.py` - deterministic template listing and rendering helper.
+- `scripts/render_pdf.py` - branded CompleteTech PDF generator (Markdown -> PDF + optional PNG preview).
+- `requirements.txt` - Python dependencies for branded PDF rendering.
 
 ## Quick Start
 
@@ -71,28 +73,29 @@ Rendered templates are drafts. Replace placeholders with verified client, scope,
 
 ## Example
 
-![One-page pilot proposal preview](assets/examples/example.png)
+![Support Email Triage Agent — Pilot Proposal preview](assets/examples/example.png)
 
-Full-document preview converted from generated artifact: [example.md](assets/examples/example.md).
+Full-document **branded PDF** rendered from the generated artifact: [example.pdf](assets/examples/example.pdf). Markdown source: [example.md](assets/examples/example.md).
 
-**One-page pilot proposal: Support triage agent**
+**Pilot proposal: Northwind Trading Co. — Customer Support Email Triage Agent**
+
+- Scope: bounded, evaluation-first 8-week pilot to classify, draft, and route inbound support email.
+- Commercials: USD 28,000 fixed fee, USD 8,400 deposit, Net 15.
+- Acceptance: routing accuracy ≥ 90% on a held-out labeled test set; zero unapproved sends.
+- Out of scope: autonomous sending and production deployment (handled by change order).
+
+Generate the branded PDF (artifacts are delivered as PDFs, not raw Markdown):
 
 ```bash
-python3 scripts/render_proposal.py \
-  --template one-page-pilot-proposal \
-  --var client_name="Northstar Support" \
-  --var workflow="support triage agent" \
-  --var pain="manual queue review slows escalation and creates uneven customer notes" \
-  --var pilot_goal="prepare consistent classifications, escalation notes, and reply drafts for human approval" \
-  --var approval_gate="support lead approves every customer-facing response" \
-  > assets/examples/example.md
+pip install -r requirements.txt
+# 1) Draft the artifact (optionally start from a catalog template)
+python3 scripts/render_proposal.py --template one-page-pilot-proposal > assets/examples/example.md
+# 2) Render the branded CompleteTech PDF (+ optional PNG preview)
+python3 scripts/render_pdf.py --markdown assets/examples/example.md \
+  --out assets/examples/example.pdf --png assets/examples/example.png \
+  --logo assets/logo.png --title "Support Email Triage Agent — Pilot Proposal" \
+  --doc-type "PROPOSAL / STATEMENT OF WORK" --subtitle "Prepared for <b>Northwind Trading Co.</b>" --meta "PROPOSAL NO.=PRO-2026-0188" --meta "DATE=2026-05-20" --meta "VALID THROUGH=2026-06-20"
 ```
-
-Example proposal frame:
-
-- Build a bounded pilot around one queue, one reviewer group, and a fixed set of evaluation examples.
-- Include assumptions, exclusions, acceptance criteria, monitoring, and handoff from the start.
-- Route sensitive data, tool access, and launch questions to `agentic-security-review-skill` before production use.
 
 ## Brand Notes
 
