@@ -75,7 +75,7 @@ Rendered templates are drafts. Replace placeholders with verified client, scope,
 
 ![Support Email Triage Agent — Pilot Proposal preview](assets/examples/example.png)
 
-Full-document **branded PDF** rendered from the generated artifact: [example.pdf](assets/examples/example.pdf). Markdown source: [example.md](assets/examples/example.md).
+Example files: [Markdown](assets/examples/example.md) · [PDF](assets/examples/example.pdf) · [DOCX](assets/examples/example.docx).
 
 **Pilot proposal: Northwind Trading Co. — Customer Support Email Triage Agent**
 
