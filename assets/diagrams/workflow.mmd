@@ -1,0 +1,13 @@
+flowchart LR
+  A[Discovery facts] --> B[Buyer decision need]
+  B --> C[Proposal type]
+  C --> D[Scope, assumptions, risks, and acceptance criteria]
+  D --> E{Approval-ready?}
+  E -->|No| F[Clarify gaps]
+  E -->|Yes| G[Proposal, SOW, or approval summary]
+  classDef source fill:#eef6ff,stroke:#3778c2,color:#102a43;
+  classDef gate fill:#fff7e6,stroke:#c97a12,color:#3d2600;
+  classDef output fill:#eefaf0,stroke:#2f8f46,color:#12351d;
+  class A,B,C,D source;
+  class E gate;
+  class F,G output;
