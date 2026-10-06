@@ -3,7 +3,10 @@
 # Agentic Proposal Skill
 
 <p align="center">
-  <img src="assets/logo.png" alt="CompleteTech LLC logo" width="260">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png">
+    <img src="assets/logo.png" alt="CompleteTech LLC logo" width="260">
+  </picture>
 </p>
 
 A CompleteTech LLC Codex skill for creating proposal and SOW-style documents for agentic development opportunities.
